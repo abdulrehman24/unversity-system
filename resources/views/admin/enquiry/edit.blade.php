@@ -94,15 +94,6 @@
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label for="purpose">{{ __('field_purpose') }}</label>
-                            <textarea class="form-control" name="purpose" id="purpose">{{ $row->purpose }}</textarea>
-
-                            <div class="invalid-feedback">
-                              {{ __('required_field') }} {{ __('field_purpose') }}
-                            </div>
-                        </div>
-
-                        <div class="form-group col-md-4">
                             <label for="note" class="form-label">{{ __('field_note') }}</label>
                             <textarea class="form-control" name="note" id="note">{{ $row->note }}</textarea>
                         </div>
@@ -158,6 +149,48 @@
                                 <option value="0" @if( $row->status == 0 ) selected @endif>{{ __('status_closed') }}</option>
                             </select>
                         </div>
+
+                        <div id="followup-container" class="row">
+                            @php
+                                $decodedPurpose = json_decode($row->purpose, true);
+                                $oldPurposes = old('purpose') ?? $decodedPurpose;
+                            @endphp
+                            @if($oldPurposes && is_array($oldPurposes))
+                                @foreach($oldPurposes as $index => $purpose)
+                                    <div class="form-group col-md-4 followup-item">
+                                        <label for="purpose_{{ $index }}">{{ __('field_followup') }}</label>
+                                        <textarea class="form-control" name="purpose[]" id="purpose_{{ $index }}" required>{{ $purpose }}</textarea>
+                                        <div class="invalid-feedback">
+                                            {{ __('required_field') }} {{ __('field_followup') }}
+                                        </div>
+                                        <button type="button" class="btn btn-danger btn-sm remove-followup w-100" 
+                                                style="margin-top:5px;" 
+                                                data-index="{{ $index }}">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                @endforeach
+                            @else
+                                <div class="form-group col-md-4 followup-item">
+                                    <label for="purpose_0">{{ __('field_followup') }}</label>
+                                    <textarea class="form-control" name="purpose[]" id="purpose_0" required></textarea>
+                                    <div class="invalid-feedback">
+                                        {{ __('required_field') }} {{ __('field_followup') }}
+                                    </div>
+                                    <button type="button" class="btn btn-danger btn-sm remove-followup w-100" 
+                                            style="margin-top:5px;">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <button type="button" class="btn btn-secondary" id="add-followup">
+                                <i class="fas fa-plus"></i> {{ __('add_more_followup') }}
+                            </button>
+                        </div>
+
                         <!-- Form End -->
                       </div>
                     </div>
@@ -174,4 +207,36 @@
 </div>
 <!-- End Content-->
 
+@endsection
+
+@section('page_js')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        let followupIndex = $('#followup-container .followup-item').length;
+
+        $('#add-followup').click(function() {
+            const template = `
+                <div class="form-group col-md-4 followup-item">
+                    <label for="purpose_${followupIndex}">{{ __('field_followup') }}</label>
+                    <textarea class="form-control" name="purpose[]" id="purpose_${followupIndex}" required></textarea>
+                    <div class="invalid-feedback">
+                        {{ __('required_field') }} {{ __('field_followup') }}
+                    </div>
+                    <button type="button" class="btn btn-danger btn-sm remove-followup w-100" 
+                            style="margin-top:5px;"
+                            data-index="${followupIndex}">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `;
+            $('#followup-container').append(template);
+            followupIndex++;
+        });
+
+        $(document).on('click', '.remove-followup', function() {
+            $(this).closest('.followup-item').remove();
+        });
+    });
+</script>
 @endsection
