@@ -15,6 +15,10 @@ class Enquiry extends Model
         'reference_id', 'source_id', 'program_id', 'name', 'father_name', 'phone', 'email', 'address', 'purpose', 'note', 'date', 'follow_up_date', 'assigned', 'number_of_students', 'status', 'created_by', 'updated_by',
     ];
 
+    protected $casts = [
+        'purpose' => 'array',
+    ];
+
     public function reference()
     {
         return $this->belongsTo(EnquiryReference::class, 'reference_id');

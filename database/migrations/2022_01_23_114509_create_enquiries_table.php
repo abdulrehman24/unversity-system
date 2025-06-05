@@ -23,7 +23,7 @@ class CreateEnquiriesTable extends Migration
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->text('address')->nullable();
-            $table->longText('purpose')->nullable();
+            $table->json('purpose')->nullable();
             $table->text('note')->nullable();
             $table->date('date');
             $table->date('follow_up_date')->nullable();
