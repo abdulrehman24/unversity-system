@@ -154,7 +154,7 @@
             </a>
             <ul class="pcoded-submenu">
 
-                {{-- @canany(['student-attendance-action', 'student-attendance-report'])
+                @canany(['student-attendance-action', 'student-attendance-report'])
                 <li class="nav-item pcoded-hasmenu {{ Request::is('admin/student-attendance*') ? 'pcoded-trigger active' : '' }}">
                     <a href="#!" class="nav-link">
                         <span class="pcoded-mtext">{{ trans_choice('module_attendance', 2) }}</span>
@@ -170,7 +170,7 @@
                         @endcan
                     </ul>
                 </li>
-                @endcanany --}}
+                @endcanany
 
                 {{-- @canany(['student-leave-manage-view', 'student-leave-manage-edit'])
                 <li class="{{ Request::is('admin/student-leave-manage*') ? 'active' : '' }}"><a href="{{ route('admin.student-leave-manage.index') }}" class="">{{ trans_choice('module_leave_manage', 1) }}</a></li>

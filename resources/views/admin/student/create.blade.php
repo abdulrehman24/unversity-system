@@ -80,7 +80,7 @@
                             </div>
                             @endif
 
-                            @if(field('student_mother_name')->status == 1)
+                            {{-- @if(field('student_mother_name')->status == 1)
                             <div class="form-group col-md-6">
                                 <label for="mother_name">{{ __('field_mother_name') }}</label>
                                 <input type="text" class="form-control" name="mother_name" id="mother_name" value="{{ old('mother_name') }}">
@@ -89,9 +89,9 @@
                                   {{ __('required_field') }} {{ __('field_mother_name') }}
                                 </div>
                             </div>
-                            @endif
+                            @endif --}}
 
-                            @if(field('student_mother_occupation')->status == 1)
+                            {{-- @if(field('student_mother_occupation')->status == 1)
                             <div class="form-group col-md-6">
                                 <label for="mother_occupation">{{ __('field_mother_occupation') }}</label>
                                 <input type="text" class="form-control" name="mother_occupation" id="mother_occupation" value="{{ old('mother_occupation') }}">
@@ -100,7 +100,7 @@
                                   {{ __('required_field') }} {{ __('field_mother_occupation') }}
                                 </div>
                             </div>
-                            @endif
+                            @endif --}}
 
                             <div class="form-group col-md-6">
                                 <label for="phone">{{ __('field_phone') }} <span>*</span></label>
@@ -176,7 +176,7 @@
                             </div>
                             @endif
 
-                            @if(field('student_mother_tongue')->status == 1)
+                            {{-- @if(field('student_mother_tongue')->status == 1)
                             <div class="form-group col-md-6">
                                 <label for="mother_tongue">{{ __('field_mother_tongue') }}</label>
                                 <input type="text" class="form-control" name="mother_tongue" id="mother_tongue" value="{{ old('mother_tongue') }}">
@@ -185,7 +185,7 @@
                                   {{ __('required_field') }} {{ __('field_mother_tongue') }}
                                 </div>
                             </div>
-                            @endif
+                            @endif --}}
 
                             @if(field('student_nationality')->status == 1)
                             <div class="form-group col-md-6">
