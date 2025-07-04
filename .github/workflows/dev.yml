@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - dev
+      - faisal-dev
 
 jobs:
   deploy:
