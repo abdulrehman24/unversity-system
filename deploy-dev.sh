@@ -20,7 +20,9 @@ git pull origin dev --allow-unrelated-histories
 echo "→ Setting permissions for storage and bootstrap/cache..."
 find storage -type d -exec chmod 775 {} \;
 find bootstrap/cache -type d -exec chmod 775 {} \;
-chown -R $USER:www-data storage bootstrap/cache
+
+# DO NOT RUN chown on shared hosting (causes permission error)
+# chown -R $USER:www-data storage bootstrap/cache
 
 # Install Composer dependencies (with optimized autoloader)
 echo "→ Installing Composer dependencies..."
