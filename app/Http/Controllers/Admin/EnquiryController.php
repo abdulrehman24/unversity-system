@@ -150,7 +150,7 @@ class EnquiryController extends Controller
             'email' => 'nullable|email',
             'date' => 'required|date|before_or_equal:today',
             'follow_up_date' => 'nullable|date|after_or_equal:today',
-            'phone' => 'unique:enquiries,phone',
+            'phone' => 'unique:enquiries,phone,' . $request->id,
             'purpose' => 'required|array|min:1',
             'purpose.*' => 'required|string',
         ]);
@@ -255,7 +255,7 @@ class EnquiryController extends Controller
         $enquiry->phone = $request->phone;
         $enquiry->email = $request->email;
         $enquiry->address = $request->address;
-        $enquiry->purpose = $request->purpose;
+        $enquiry->purpose = json_encode($request->purpose);;
         $enquiry->note = $request->note;
         $enquiry->date = $request->date;
         $enquiry->follow_up_date = $request->follow_up_date;

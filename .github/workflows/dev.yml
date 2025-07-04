@@ -1,0 +1,22 @@
+name: Build and Deploy to Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: SSH Deploy to Namecheap (Main)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOSTNAME }}           # e.g. professor.website or 209.74.67.43
+          username: ${{ secrets.USERNAME }}       # e.g. proflxlj
+          key: ${{ secrets.SSH_PRIVATE_KEY }}     # your private key
+          port: ${{ secrets.PORT }}               # usually 21098 for Namecheap
+          script: |
+            cd ${{ secrets.PATH }} && ./deploy-dev.sh

@@ -39,7 +39,7 @@
                 <li class="{{ Request::is('admin/frontdesk/meeting*') ? 'active' : '' }}"><a href="{{ route('admin.meeting.index') }}" class="">{{ trans_choice('module_meeting', 2) }}</a></li>
                 @endcanany --}}
 
-                {{-- @canany(['visit-purpose-create', 'visit-purpose-view', 'visitor-token-setting-view', 'enquiry-source-create', 'enquiry-source-view', 'enquiry-reference-create', 'enquiry-reference-view', 'complain-type-create', 'complain-type-view', 'complain-source-create', 'complain-source-view', 'postal-type-create', 'postal-type-view', 'meeting-type-create', 'meeting-type-view'])
+                @canany(['visit-purpose-create', 'visit-purpose-view', 'visitor-token-setting-view', 'enquiry-source-create', 'enquiry-source-view', 'enquiry-reference-create', 'enquiry-reference-view', 'complain-type-create', 'complain-type-view', 'complain-source-create', 'complain-source-view', 'postal-type-create', 'postal-type-view', 'meeting-type-create', 'meeting-type-view'])
                 <li class="nav-item pcoded-hasmenu {{ Request::is('admin/frontdesk/visit-purpose*') ? 'pcoded-trigger active' : '' }} {{ Request::is('admin/frontdesk/visitor-token-setting*') ? 'pcoded-trigger active' : '' }} {{ Request::is('admin/frontdesk/enquiry-source*') ? 'pcoded-trigger active' : '' }} {{ Request::is('admin/frontdesk/enquiry-reference*') ? 'pcoded-trigger active' : '' }} {{ Request::is('admin/frontdesk/complain-type*') ? 'pcoded-trigger active' : '' }} {{ Request::is('admin/frontdesk/complain-source*') ? 'pcoded-trigger active' : '' }} {{ Request::is('admin/frontdesk/postal-type*') ? 'pcoded-trigger active' : '' }} {{ Request::is('admin/frontdesk/meeting-type*') ? 'pcoded-trigger active' : '' }}">
                     <a href="#!" class="nav-link">
                         <span class="pcoded-mtext">{{ trans_choice('module_setting', 2) }}</span>
@@ -79,7 +79,7 @@
                         @endcanany
                     </ul>
                 </li>
-                @endcanany --}}
+                @endcanany
             </ul>
         </li>
         @endcanany
@@ -259,7 +259,7 @@
         </li>
         @endcanany
 
-        {{-- @canany(['class-routine-create', 'class-routine-view', 'class-routine-print', 'exam-routine-create', 'exam-routine-view', 'exam-routine-print', 'class-routine-teacher', 'routine-setting-class', 'routine-setting-exam'])
+        @canany(['class-routine-create', 'class-routine-view', 'class-routine-print', 'exam-routine-create', 'exam-routine-view', 'exam-routine-print', 'class-routine-teacher', 'routine-setting-class', 'routine-setting-exam'])
         <li class="nav-item pcoded-hasmenu {{ Request::is('admin/routine*') ? 'pcoded-trigger active' : '' }}">
             <a href="#!" class="nav-link">
                 <span class="pcoded-micon"><i class="far fa-calendar-alt"></i></span>
@@ -305,7 +305,7 @@
                 @endcanany
             </ul>
         </li>
-        @endcanany --}}
+        @endcanany
 
         @canany(['exam-attendance', 'exam-marking', 'exam-result', 'subject-marking', 'subject-result', 'grade-view', 'grade-create', 'exam-type-view', 'exam-type-create', 'admit-card-view', 'admit-card-print', 'admit-card-download', 'admit-setting-view', 'result-contribution-view'])
         <li class="nav-item pcoded-hasmenu {{ Request::is('admin/exam*') ? 'pcoded-trigger active' : '' }}">
