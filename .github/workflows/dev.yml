@@ -15,10 +15,10 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.HOSTNAME }}           # e.g. professor.website or 209.74.67.43
-          username: ${{ secrets.USERNAME }}       # e.g. proflxlj
-          key: ${{ secrets.SSH_PRIVATE_KEY }}     # paste PRIVATE key in GitHub Secrets
-          port: ${{ secrets.PORT }}               # e.g. 21098 (Namecheap default)
+          host: ${{ secrets.HOSTNAME }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.PORT }}
           script: |
                 cd ${{ secrets.PATH }}
                 chmod +x deploy-dev.sh

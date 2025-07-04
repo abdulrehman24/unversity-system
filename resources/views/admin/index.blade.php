@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6 col-xl-3">
+            {{-- <div class="col-sm-6 col-md-6 col-xl-3">
                 <div class="card bg-c-blue bitcoin-wallet">
                     <div class="card-block">
                         <h5 class="text-white mb-2">{{ __('field_total') }} {{ trans_choice('module_book', 2) }}</h5>
@@ -52,7 +52,7 @@
                         <i class="fas fa-book f-70 text-white"></i>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <!-- [ bitcoin-wallet section ] end-->
         </div>
         <div class="row">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-6 col-xl-3">
+            {{-- <div class="col-sm-6 col-md-6 col-xl-3">
                 <div class="card theme-bg bitcoin-wallet">
                     <div class="card-block">
                         <h5 class="text-white mb-2">{{ __('field_daily') }} {{ trans_choice('module_postal_exchange', 2) }}</h5>
@@ -91,10 +91,10 @@
                         <i class="fas fa-exchange-alt f-70 text-white"></i>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
-        @canany(['fees-student-report', 'payroll-report'])
+        {{-- @canany(['fees-student-report', 'payroll-report'])
         <div class="row">
             <div class="col-12 col-md-12 col-xl-12">
                 <div class="card">
@@ -104,9 +104,9 @@
                 </div>
             </div>
         </div>
-        @endcanany
+        @endcanany --}}
 
-        <div class="row">
+        {{-- <div class="row">
             @canany(['fees-student-report'])
             <div class="col-12 col-md-6 col-xl-6 mt-5">
                 <div class="card">
@@ -125,7 +125,7 @@
                 </div>
             </div>
             @endcanany
-        </div>
+        </div> --}}
 
         <div class="clear-fix mt-5"></div>
         <div class="row">
@@ -147,7 +147,7 @@
                 </div>
             </div>
             @endcanany
-            @canany(['item-view'])
+            {{-- @canany(['item-view'])
             <div class="col-xl-4 col-md-6">
                 <div class="card">
                     <div class="card-block">
@@ -155,7 +155,7 @@
                     </div>
                 </div>
             </div>
-            @endcanany
+            @endcanany --}}
         </div>
 
         @canany(['visitor-view', 'phone-log-view', 'enquiry-view', 'complaine-view', 'postal-exchange-view', 'meeting-view'])

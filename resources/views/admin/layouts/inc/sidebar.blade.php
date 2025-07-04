@@ -206,9 +206,9 @@
                 </li>
                 @endcanany
 
-                @canany(['student-enroll-alumni'])
+                {{-- @canany(['student-enroll-alumni'])
                 <li class="{{ Request::is('admin/student/student-alumni*') ? 'active' : '' }}"><a href="{{ route('admin.student-alumni.index') }}" class="">{{ trans_choice('module_student_alumni', 1) }} {{ __('list') }}</a></li>
-                @endcanany
+                @endcanany --}}
             </ul>
         </li>
         @endcanany
