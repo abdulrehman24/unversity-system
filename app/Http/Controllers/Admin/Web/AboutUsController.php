@@ -27,6 +27,7 @@ class AboutUsController extends Controller
         $this->path     = 'about-us';
         $this->access   = 'about-us';
 
+
         $this->middleware('permission:'.$this->access.'-view');
     }
 

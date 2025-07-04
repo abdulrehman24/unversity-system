@@ -14,7 +14,7 @@ git config pull.rebase false
 echo "→ Resetting and pulling latest changes..."
 git reset --hard
 git clean -fd
-git pull origin dev
+git pull origin dev --allow-unrelated-histories
 
 # Set correct file permissions
 echo "→ Setting permissions for storage and bootstrap/cache..."
