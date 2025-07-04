@@ -135,7 +135,7 @@ Route::name('payment.')->namespace('Payment')->prefix('payment')->group(function
 Route::middleware(['auth:web', 'license'])->name('admin.')->namespace('Admin')->prefix('admin')->group(function () {
 
     // Dashboard Route
-    Route::get('/', 'DashboardController@index')->name('dashboard.index');
+    Route::get('/', 'DashboardController@index')->name('dashboard.index1');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard.index');
 
 
