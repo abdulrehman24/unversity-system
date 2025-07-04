@@ -558,7 +558,7 @@ Route::prefix('student')->name('student.')->namespace('Student')->group(function
 Route::middleware(['auth:student'])->prefix('student')->name('student.')->namespace('Student')->group(function () {
 
     // Dashboard Route
-    Route::get('/', 'DashboardController@index')->name('dashboard.index');
+    Route::get('/', 'DashboardController@index')->name('dashboard.index1');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard.index');
 
     // Transcript Routes
