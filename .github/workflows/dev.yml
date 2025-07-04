@@ -1,13 +1,13 @@
-name: Build and Deploy to Main
+name: Build and Deploy to Dev
 
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   deploy:
-    name: SSH Deploy to Namecheap (Main)
+    name: SSH Deploy to Namecheap (Dev)
     runs-on: ubuntu-latest
 
     steps:

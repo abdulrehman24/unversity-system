@@ -5,13 +5,13 @@ set -e
 cd /home/proflxlj/university.professor.website || exit
 
 echo "=================================================================================="
-echo "🚀 Starting Laravel Deployment (main)"
+echo "🚀 Starting Laravel Deployment (Dev)"
 echo "=================================================================================="
 
-# Reset and pull latest changes from main branch
+# Reset and pull latest changes from dev branch
 echo "→ Resetting and pulling latest changes..."
 git reset --hard
-git pull origin main
+git pull origin dev
 
 # Set proper permissions
 echo "→ Setting permissions for storage and bootstrap/cache..."
