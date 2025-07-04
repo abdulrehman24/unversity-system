@@ -54,8 +54,6 @@
                 </div>
             </div> --}}
             <!-- [ bitcoin-wallet section ] end-->
-        </div>
-        <div class="row">
             <div class="col-sm-6 col-md-6 col-xl-3">
                 <div class="card theme-bg bitcoin-wallet">
                     <div class="card-block">
@@ -65,6 +63,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-sm-6 col-md-6 col-xl-3">
                 <div class="card theme-bg bitcoin-wallet">
                     <div class="card-block">
@@ -158,7 +158,7 @@
             @endcanany --}}
         </div>
 
-        @canany(['visitor-view', 'phone-log-view', 'enquiry-view', 'complaine-view', 'postal-exchange-view', 'meeting-view'])
+        {{-- @canany(['visitor-view', 'phone-log-view', 'enquiry-view', 'complaine-view', 'postal-exchange-view', 'meeting-view'])
         <div class="row">
             <div class="col-xl-12 col-md-12">
                 <div class="card">
@@ -168,7 +168,7 @@
                 </div>
             </div>
         </div>
-        @endcanany
+        @endcanany --}}
         <!-- [ Main Content ] end -->
     </div>
 </div>
