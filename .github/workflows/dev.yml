@@ -19,7 +19,4 @@ jobs:
           username: ${{ secrets.USERNAME }}       # e.g. proflxlj
           key: ${{ secrets.SSH_PRIVATE_KEY }}     # paste PRIVATE key in GitHub Secrets
           port: ${{ secrets.PORT }}               # e.g. 21098 (Namecheap default)
-          script: |
-            cd ${{ secrets.PATH }} || exit 1
-            chmod +x deploy-dev.sh
-            ./deploy-dev.sh
+          script: "cd ${{ secrets.PATH }} && ./deploy-dev.sh"
